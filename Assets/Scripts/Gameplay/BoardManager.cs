@@ -1,3 +1,4 @@
+
 using UnityEngine;
 using System.Collections.Generic; // Dictionary
 
@@ -11,13 +12,21 @@ public class BoardManager : MonoBehaviour
 
     private TileView _selectedTile;   // null = nothing selected
     
+    public System.Action OnWin;
+
     [SerializeField] private TileView tilePrefab;
 
     //grid step (in JSON units) -> world-space distance, per tile
     [SerializeField] private float unitSize = 0.5f; 
 
+    // fileds to keep the board centered
+    private float _centerX;
+    private float _centerY;
+
     public void BuildBoard(BoardLayoutData layout, TileSpriteProvider spriteProvider) 
     {
+        GetCenterCoords(layout);
+
         _idToTile = new Dictionary<int, TileView>();
 
         foreach (var tileData in layout.tiles) {
@@ -25,8 +34,8 @@ public class BoardManager : MonoBehaviour
 
             // position the tile
             tileView.transform.localPosition = new Vector3(
-                tileData.x * unitSize,
-                tileData.y * unitSize,
+                (tileData.x - _centerX) * unitSize,
+                (tileData.y - _centerY) * unitSize,
                 -tileData.layer * 0.01f
             );
 
@@ -58,6 +67,36 @@ public class BoardManager : MonoBehaviour
         return false;
     }
 
+    private bool IsTileBlocked(TileView tile)
+    {
+        var x = tile.Data.x;
+        var y = tile.Data.y;
+        var layer = tile.Data.layer;
+
+        bool leftOccupied = false;
+        bool rightOccupied = false;
+
+        
+         foreach (var otherTile in _idToTile.Values)
+        {
+            var otherX = otherTile.Data.x;
+            var otherY = otherTile.Data.y;
+            var otherLayer = otherTile.Data.layer;
+
+            if (otherY == y && otherLayer == layer)
+            {
+                if (otherX == x - 2) {
+                    leftOccupied = true;
+                } 
+                if (otherX == x + 2) {
+                    rightOccupied = true;
+                } 
+            }
+        }
+
+        return leftOccupied && rightOccupied;
+    }
+
     private void RemoveTile(TileView tile)
     {
         // remove it from _idToTile
@@ -69,8 +108,8 @@ public class BoardManager : MonoBehaviour
 
     public void OnTileTapped(TileView tile)
     {
-        // the tile is covered -> ignore
-        if (IsTileCovered(tile)) {
+        // the tile is covered or blocked -> ignore
+        if (IsTileCovered(tile) || IsTileBlocked(tile)) {
             return;
         }
 
@@ -90,11 +129,15 @@ public class BoardManager : MonoBehaviour
 
         // different tile is selected  -> check fot match
   
-        if (_selectedTile.Data.typeId == tile.Data.typeId) { // natch
+        if (_selectedTile.Data.typeId == tile.Data.typeId) { // match
             
             RemoveTile(_selectedTile);
             RemoveTile(tile);
             _selectedTile = null;
+
+            if (_idToTile.Count == 0) {
+                OnWin?.Invoke();
+            }
 
         } else {                                            // not a match
             
@@ -105,8 +148,23 @@ public class BoardManager : MonoBehaviour
             _selectedTile = tile;
         }
 
-        return;
-        
+    }
 
+    private void GetCenterCoords(BoardLayoutData layout) 
+    {
+        int minX = int.MaxValue;
+        int maxX = int.MinValue;    
+        int minY = int.MaxValue; 
+        int maxY = int.MinValue;
+
+        foreach (var t in layout.tiles) {
+            minX = Mathf.Min(minX, t.x);
+            maxX = Mathf.Max(maxX, t.x);
+            minY = Mathf.Min(minY, t.y);
+            maxY = Mathf.Max(maxY, t.y);
+        }
+
+        _centerX = (minX + maxX) / 2f;
+        _centerY = (minY + maxY) / 2f;
     }
 }

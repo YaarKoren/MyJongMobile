@@ -1,16 +1,16 @@
 public enum BoardShape {
-    ShapeTurtle,
-    ShapeCat
+    Turtle,
+    Cat
 }
 
 public enum BoardDifficulty {
-    DifficultyEasy,
-    DifficultyClassic
+    Easy,
+    Classic
 }
 
 public static class GameConfig  {
-    public static BoardShape Shape; 
-    public static BoardDifficulty Difficulty;
+    public static BoardShape Shape = BoardShape.Turtle;
+    public static BoardDifficulty Difficulty = BoardDifficulty.Classic;
 
     public static string BoardKey => $"{Shape}_{Difficulty}".ToLowerInvariant();
 }
