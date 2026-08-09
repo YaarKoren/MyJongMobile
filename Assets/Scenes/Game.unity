@@ -148,44 +148,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b9cad044ed21cc45bb0a7e94917a80a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameScreenController
-  _boardManager: {fileID: 1913208567}
-  _defaultArt:
-  - {fileID: 2387646974711084208, guid: 653a74a792a370f468ccc47e8c38a052, type: 3}
-  - {fileID: -914760476989975223, guid: 18c7567a28ca58149ae2ae7a80ad5482, type: 3}
-  - {fileID: 4974028443982203520, guid: fb6964020685f6d409cc0541218ebb2e, type: 3}
-  - {fileID: 4974028443982203520, guid: fb6964020685f6d409cc0541218ebb2e, type: 3}
-  - {fileID: -6607893470347333376, guid: ed7ba82ab28ad314ea09be6fd07d6b24, type: 3}
-  - {fileID: -7165229625778216754, guid: 5f2ae201e8893b844bb99948c98425d5, type: 3}
-  - {fileID: -7621188609403934177, guid: 8cef0afe89e3e9a4997a130390027a1c, type: 3}
-  - {fileID: -6443424836301529625, guid: 3615317b5f56bad4bab2be48c9067da1, type: 3}
-  - {fileID: 7773415090011355470, guid: 50991a670b2f9ce489248f5a5af7b28f, type: 3}
-  - {fileID: -47128018377544277, guid: ee18561f6b1ee2a43a0cf3207ab3c8e4, type: 3}
-  - {fileID: -6833579883134209608, guid: 80108bed696f92842bcdd94b0f0cf960, type: 3}
-  - {fileID: -1931834876685590948, guid: c6eae864d30952644b5776a0912e053e, type: 3}
-  - {fileID: 341909351847436571, guid: cf8308b54b363844c8d1d18c474c77b5, type: 3}
-  - {fileID: -2720542357187044175, guid: f3f2888fb63e8944eb53be2674a7dda2, type: 3}
-  - {fileID: 1844436745682411705, guid: a3fbeb1bc5b2f5d4eb2a6c27bb185af5, type: 3}
-  - {fileID: 205758070306301307, guid: 10dc295a9053811478fbe299ee1ca584, type: 3}
-  - {fileID: 7643517701509080659, guid: 2ee6f42ee7c3b2242b251812e9f8f5dc, type: 3}
-  - {fileID: -7776482845937028530, guid: d2cbd6b78d90d2e45a18a98941c1f94a, type: 3}
-  - {fileID: -4475447917555866148, guid: b9fd4c9aa615b314295bdff997b1730e, type: 3}
-  - {fileID: 5253225212114711421, guid: 52bb3f7d7df6fcc439772d6c6cfcac60, type: 3}
-  - {fileID: -13111798486741452, guid: 05640e1d20fabed46a850cc0cb74dd96, type: 3}
-  - {fileID: -2500783108554846740, guid: a4261d21a30d79e49812478b057ca3a2, type: 3}
-  - {fileID: -5665140690985605554, guid: c880a854973b73148a6faa1465d66a67, type: 3}
-  - {fileID: -3086410042527269465, guid: 7864196e6bcf0a64db54f57b3c1abdd7, type: 3}
-  - {fileID: 1479933984448862427, guid: 19f0da1429b69ad43bb4f0019a0e0b8a, type: 3}
-  - {fileID: -8498670498433710248, guid: 63bcaa82050c8384d80c078ee315d9bc, type: 3}
-  - {fileID: -13111798486741452, guid: 05640e1d20fabed46a850cc0cb74dd96, type: 3}
-  - {fileID: -5879058871072101063, guid: ff544ff4cf66d314ca8bdf661d8b031d, type: 3}
-  - {fileID: 6427804880841236149, guid: 28c63e740d226644eb40d0d84a62767c, type: 3}
-  - {fileID: -3640901685013225905, guid: 0bc95fbc6ba4fef4ebb4c8d1d2006cce, type: 3}
-  - {fileID: -9138015059696660434, guid: e8ecac1178d1c774996b439d62ac1fd0, type: 3}
-  - {fileID: -7876654568402635692, guid: 2faa03014d2caee4c81b3c4f1f7d0a5c, type: 3}
-  - {fileID: 1949434967089831632, guid: 7bdb19dd8f9e1b54ba57c6b313b4b552, type: 3}
-  - {fileID: 731747973423786738, guid: 00c3649173880334585e437553a4c41d, type: 3}
-  - {fileID: -5133428779159493905, guid: b5b63d2d844458049a6f20aa011d67db, type: 3}
-  - {fileID: 994102976746149018, guid: fdfccdc1b6b22af40b1f4339a1d731e4, type: 3}
+  boardManager: {fileID: 1913208567}
+  defaultArt:
+  - {fileID: 21300000, guid: 653a74a792a370f468ccc47e8c38a052, type: 3}
+  - {fileID: 21300000, guid: 18c7567a28ca58149ae2ae7a80ad5482, type: 3}
+  - {fileID: 21300000, guid: fb6964020685f6d409cc0541218ebb2e, type: 3}
+  - {fileID: 21300000, guid: ed7ba82ab28ad314ea09be6fd07d6b24, type: 3}
+  - {fileID: 21300000, guid: 5f2ae201e8893b844bb99948c98425d5, type: 3}
+  - {fileID: 21300000, guid: 8cef0afe89e3e9a4997a130390027a1c, type: 3}
+  - {fileID: 21300000, guid: 3615317b5f56bad4bab2be48c9067da1, type: 3}
+  - {fileID: 21300000, guid: 50991a670b2f9ce489248f5a5af7b28f, type: 3}
+  - {fileID: 21300000, guid: ee18561f6b1ee2a43a0cf3207ab3c8e4, type: 3}
+  - {fileID: 21300000, guid: 80108bed696f92842bcdd94b0f0cf960, type: 3}
+  - {fileID: 21300000, guid: c6eae864d30952644b5776a0912e053e, type: 3}
+  - {fileID: 21300000, guid: cf8308b54b363844c8d1d18c474c77b5, type: 3}
+  - {fileID: 21300000, guid: 3f628cc80c7b1b8409121fa12120681b, type: 3}
+  - {fileID: 21300000, guid: f3f2888fb63e8944eb53be2674a7dda2, type: 3}
+  - {fileID: 21300000, guid: a3fbeb1bc5b2f5d4eb2a6c27bb185af5, type: 3}
+  - {fileID: 21300000, guid: 10dc295a9053811478fbe299ee1ca584, type: 3}
+  - {fileID: 21300000, guid: 2ee6f42ee7c3b2242b251812e9f8f5dc, type: 3}
+  - {fileID: 21300000, guid: d2cbd6b78d90d2e45a18a98941c1f94a, type: 3}
+  - {fileID: 21300000, guid: b9fd4c9aa615b314295bdff997b1730e, type: 3}
+  - {fileID: 21300000, guid: 52bb3f7d7df6fcc439772d6c6cfcac60, type: 3}
+  - {fileID: 21300000, guid: 05640e1d20fabed46a850cc0cb74dd96, type: 3}
+  - {fileID: 21300000, guid: a4261d21a30d79e49812478b057ca3a2, type: 3}
+  - {fileID: 21300000, guid: c880a854973b73148a6faa1465d66a67, type: 3}
+  - {fileID: 21300000, guid: 7864196e6bcf0a64db54f57b3c1abdd7, type: 3}
+  - {fileID: 21300000, guid: 19f0da1429b69ad43bb4f0019a0e0b8a, type: 3}
+  - {fileID: 21300000, guid: 63bcaa82050c8384d80c078ee315d9bc, type: 3}
+  - {fileID: 21300000, guid: 55b822cc26ab0324f9bba5e3d974d843, type: 3}
+  - {fileID: 21300000, guid: ff544ff4cf66d314ca8bdf661d8b031d, type: 3}
+  - {fileID: 21300000, guid: 28c63e740d226644eb40d0d84a62767c, type: 3}
+  - {fileID: 21300000, guid: 0bc95fbc6ba4fef4ebb4c8d1d2006cce, type: 3}
+  - {fileID: 21300000, guid: e8ecac1178d1c774996b439d62ac1fd0, type: 3}
+  - {fileID: 21300000, guid: 2faa03014d2caee4c81b3c4f1f7d0a5c, type: 3}
+  - {fileID: 21300000, guid: 7bdb19dd8f9e1b54ba57c6b313b4b552, type: 3}
+  - {fileID: 21300000, guid: 00c3649173880334585e437553a4c41d, type: 3}
+  - {fileID: 21300000, guid: b5b63d2d844458049a6f20aa011d67db, type: 3}
+  - {fileID: 21300000, guid: fdfccdc1b6b22af40b1f4339a1d731e4, type: 3}
 --- !u!4 &150674208
 Transform:
   m_ObjectHideFlags: 0
@@ -465,6 +465,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BoardManager
   tilePrefab: {fileID: 2279909553094315029, guid: 3b30fbcd09a69c94485b8f3c0b3e8a8d, type: 3}
   unitSize: 0.5
+  layerVisualOffset: 0.12
 --- !u!4 &1913208568
 Transform:
   m_ObjectHideFlags: 0

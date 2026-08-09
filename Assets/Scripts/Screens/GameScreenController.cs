@@ -3,13 +3,13 @@ using System.Collections.Generic; // List
 
 public class GameScreenController : MonoBehaviour
 {
-    [SerializeField] private BoardManager _boardManager;
-    [SerializeField] private List<Sprite> _defaultArt;
+    [SerializeField] private BoardManager boardManager;
+    [SerializeField] private List<Sprite> defaultArt;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        _boardManager.OnWin += HandleWin;
+        boardManager.OnWin += HandleWin;
 
         BoardLayoutData boardData = BoardLoader.Load(); 
 
@@ -18,9 +18,9 @@ public class GameScreenController : MonoBehaviour
             return;
         }
 
-        TileSpriteProvider spriteProvider = new TileSpriteProvider(_defaultArt);
+        TileSpriteProvider spriteProvider = new TileSpriteProvider(defaultArt);
 
-        _boardManager.BuildBoard(boardData, spriteProvider);
+        boardManager.BuildBoard(boardData, spriteProvider);
 
         
     }

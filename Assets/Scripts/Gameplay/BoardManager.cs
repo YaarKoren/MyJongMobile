@@ -22,6 +22,9 @@ public class BoardManager : MonoBehaviour
     // fileds to keep the board centered
     private float _centerX;
     private float _centerY;
+    
+    // per-layer diagonal offset, for the "stacked" look
+    [SerializeField] private float layerVisualOffset = 0.12f; 
 
     public void BuildBoard(BoardLayoutData layout, TileSpriteProvider spriteProvider) 
     {
@@ -33,9 +36,11 @@ public class BoardManager : MonoBehaviour
             var tileView = Instantiate(tilePrefab, transform);
 
             // position the tile
+            float visualOffset = tileData.layer * layerVisualOffset;
+
             tileView.transform.localPosition = new Vector3(
-                (tileData.x - _centerX) * unitSize,
-                (tileData.y - _centerY) * unitSize,
+                (tileData.x - _centerX) * unitSize + visualOffset,
+                (tileData.y - _centerY) * unitSize + visualOffset,
                 -tileData.layer * 0.01f
             );
 
