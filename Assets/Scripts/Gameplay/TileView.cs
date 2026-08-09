@@ -26,7 +26,6 @@ public class TileView : MonoBehaviour, IPointerClickHandler
 
 
     public void SetSelected(bool value) {
-        _isSelected = value;
         highlightRenderer.enabled = value;
         
         // make the tile larger
