@@ -26,7 +26,7 @@ public class BoardManager : MonoBehaviour
     // per-layer diagonal offset, for the "stacked" look
     [SerializeField] private float layerVisualOffset = 0.12f; 
 
-    public void BuildBoard(BoardLayoutData layout, TileSpriteProvider spriteProvider) 
+    public void BuildBoard(BoardLayoutData layout, TileSpriteProvider spriteProvider, float artScale) 
     {
         GetCenterCoords(layout);
 
@@ -45,7 +45,7 @@ public class BoardManager : MonoBehaviour
             );
 
             // initialize the tile with its picture
-            tileView.Init(tileData, spriteProvider.GetSpriteForType(tileData.typeId), this);
+            tileView.Init(tileData, spriteProvider.GetSpriteForType(tileData.typeId), artScale, this);
             
             // insert to the dictionary
             _idToTile[tileData.id] = tileView;

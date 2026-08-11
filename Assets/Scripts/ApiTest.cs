@@ -4,8 +4,13 @@ using UnityEngine.UI;
 using System.Collections;
 using System.Text;
 using TMPro;  // TextMeshProUGUI
+using UnityEngine.SceneManagement;
+
 
 public class ApiTest : MonoBehaviour {
+
+    [SerializeField] private string homeScene = "Home";
+
     public TextMeshProUGUI resultText; 
 
     private string baseUrl = "http://192.168.1.37:8000";
@@ -34,4 +39,10 @@ public class ApiTest : MonoBehaviour {
             resultText.text = "Error: " + request.error;
         }
     }
+
+    public void OnHomeButtonPressed()
+    {
+        SceneManager.LoadScene(homeScene);
+    }
+
 }

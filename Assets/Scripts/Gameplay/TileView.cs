@@ -9,12 +9,20 @@ public class TileView : MonoBehaviour, IPointerClickHandler
     
     [SerializeField] private SpriteRenderer artRenderer;
     [SerializeField] private SpriteRenderer highlightRenderer;
+
+    // fit the art to board
+    private float _artScale = 1f;
     
-    public void Init(TileData data, Sprite artSprite, BoardManager board)
+    public void Init(TileData data, Sprite artSprite, float artScale, BoardManager board)
     {
         Data = data;
-        _board = board;
         artRenderer.sprite = artSprite;
+        _artScale = artScale;
+        _board = board;
+
+        // fit the art to board
+        artRenderer.transform.localScale = Vector3.one * artScale;
+
     }   
 
     // what happens when this tile is tapped
@@ -26,9 +34,11 @@ public class TileView : MonoBehaviour, IPointerClickHandler
 
 
     public void SetSelected(bool value) {
-        highlightRenderer.enabled = value;
+        // highlight the edges of the tile
+        //highlightRenderer.enabled = value;
         
-        // make the tile larger
-        transform.localScale = value ? new Vector3(1.15f, 1.15f, 1f) : Vector3.one;
+        // make the tile larger, keep fitted to board
+        float scale = value ? _artScale * 1.15f : _artScale;
+        transform.localScale = Vector3.one * scale;
     }
 }
