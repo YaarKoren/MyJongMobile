@@ -2,7 +2,9 @@
 
 ## Activate the virtual environment
 Every time you work on the backend, activate the venv first:
+
 cd backend
+
 source venv/Scripts/activate
 
 ## Run the server
